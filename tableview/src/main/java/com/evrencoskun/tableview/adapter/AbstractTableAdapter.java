@@ -117,7 +117,11 @@ public abstract class AbstractTableAdapter<CH, RH, C> implements ITableAdapter {
         setColumnHeaderItems(columnHeaderItems);
         setRowHeaderItems(rowHeaderItems);
         setCellItems(cellItems);
+        
+        updateCornerView(columnHeaderItems, rowHeaderItems, cellItems);
+    }
 
+    protected void updateCornerView(List<CH> columnHeaderItems, List<RH> rowHeaderItems, List<List<C>> cellItems) {
         // Control corner view
         if ((columnHeaderItems != null && !columnHeaderItems.isEmpty()) && (rowHeaderItems !=
                 null && !rowHeaderItems.isEmpty()) && (cellItems != null && !cellItems.isEmpty())
